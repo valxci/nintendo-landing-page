@@ -69,6 +69,7 @@ img {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-transform: uppercase;
     font-size: 0.9rem;
+    text-decoration: none;
 }
 
 .btn-primary {
@@ -566,6 +567,10 @@ img {
 
     -webkit-mask-image: linear-gradient(to top, black 90%, transparent 100%);
     mask-image: linear-gradient(to top, black 90%, transparent 100%);
+
+    position: relative;
+    /* 💥 REGLA MÁS IMPORTANTE */
+    overflow: visible;
 }
 
 .final-cta-text {

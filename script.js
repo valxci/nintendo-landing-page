@@ -22,6 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener('DOMContentLoaded', () => {
   const elements = document.querySelectorAll('.draggable');
 
+  let FIX_X = null;
+  let FIX_Y = null;
+
   elements.forEach(el => {
     let dragging = false;
     let offsetX = 0;
@@ -33,15 +36,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     el.addEventListener("pointerdown", (e) => {
       dragging = true;
-
       el.setPointerCapture(e.pointerId);
       el.style.cursor = "grabbing";
 
-      // pausar animación mientras arrastras
+      // Pausar animación
       el.dataset.prevAnimation = el.style.animation;
       el.style.animation = "none";
 
       const rect = el.getBoundingClientRect();
+
+      // ✔️ REGISTRAR DISTANCIA DE TP SOLO 1 VEZ
+      if (FIX_X === null) {
+        FIX_X = rect.left - el.offsetLeft;
+        FIX_Y = rect.top - el.offsetTop;
+      }
+
+      // ✔️ CORREGIR POSICIÓN REAL USANDO LA COMPENSACIÓN
+      el.style.left = rect.left - FIX_X + "px";
+      el.style.top  = rect.top  - FIX_Y + "px";
+
       offsetX = e.clientX - rect.left;
       offsetY = e.clientY - rect.top;
     });
@@ -49,20 +62,16 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener("pointermove", (e) => {
       if (!dragging) return;
 
-      const x = e.clientX - offsetX;
-      const y = e.clientY - offsetY;
+      const x = e.clientX - offsetX - FIX_X;
+      const y = e.clientY - offsetY - FIX_Y;
 
       el.style.left = x + "px";
       el.style.top = y + "px";
-      el.style.position = "absolute"; // lo hacemos absoluto solo cuando lo arrastras
     });
 
-    window.addEventListener("pointerup", (e) => {
-      if (!dragging) return;
+    window.addEventListener("pointerup", () => {
       dragging = false;
       el.style.cursor = "grab";
-
-      // restaurar animación flotante
       el.style.animation = el.dataset.prevAnimation || "";
     });
   });
