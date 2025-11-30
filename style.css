@@ -540,36 +540,67 @@ img {
    ========================================= */
 .final-cta-section {
     padding: 100px 0;
-    text-align: center;
-    background: radial-gradient(circle at center, #1a2a4a 0%, #050810 70%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     overflow: hidden;
+    background-image: url(images/fondo-footer.png);
+    background-size: cover;
+    background-position: center;
+    aspect-ratio: 576/373;
+}
+
+.final-cta-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .final-cta-text h2 {
-    font-size: 3rem;
+    font-size: 4rem;
     margin-bottom: 20px;
+    text-align: center;
+    margin-top: 70%;
 }
 
 .final-cta-text p {
     margin-bottom: 30px;
     color: #ccc;
+    text-align: center;
+}
+
+.floating-diamante {
+    position: absolute;
+    left: 15%;
+    top: 35%;
+    width: 100px;
+    animation: float 3s ease-in-out infinite;
 }
 
 .floating-star {
     position: absolute;
     left: 10%;
+    top: 50%;
+    width: 200px;
+    animation: float 5s ease-in-out infinite;
+}
+
+.floating-rabano {
+    position: absolute;
+    right: 20%;
     top: 20%;
-    width: 100px;
-    animation: float 4s ease-in-out infinite;
+    width: 175px;
+    animation: float 2s ease-in-out infinite reverse;
 }
 
 .floating-hat {
     position: absolute;
-    right: 15%;
-    bottom: 20%;
-    width: 120px;
-    animation: float 3s ease-in-out infinite reverse;
+    right: 8%;
+    top: 30%;
+    width: 300px;
+    animation: float 7s ease-in-out infinite reverse;
 }
 
 /* =========================================
