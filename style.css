@@ -318,6 +318,7 @@ img {
     /* Hace las cards cuadradas */
     display: flex;
     flex-direction: column;
+    animation: float 5s ease-in-out infinite;
 }
 
 .featured-card-bg {
@@ -384,6 +385,7 @@ img {
 
 .featured-item-traslated {
     transform: translateY(90px);
+    animation: float-traslated 5s ease-in-out infinite;
 }
 
 .featured-item:hover {
@@ -474,7 +476,7 @@ img {
    NEWSLETTER SECTION
    ========================================= */
 .newsletter-section {
-    padding: 80px 0;
+    padding: 0;
 }
 
 .newsletter-container {
@@ -549,6 +551,9 @@ img {
     background-size: cover;
     background-position: center;
     aspect-ratio: 576/373;
+
+    -webkit-mask-image: linear-gradient(to top, black 90%, transparent 100%);
+    mask-image: linear-gradient(to top, black 90%, transparent 100%);
 }
 
 .final-cta-text {
@@ -574,7 +579,7 @@ img {
 .floating-diamante {
     position: absolute;
     left: 15%;
-    top: 35%;
+    top: 45%;
     width: 100px;
     animation: float 3s ease-in-out infinite;
 }
@@ -582,7 +587,7 @@ img {
 .floating-star {
     position: absolute;
     left: 10%;
-    top: 50%;
+    top: 60%;
     width: 200px;
     animation: float 5s ease-in-out infinite;
 }
@@ -590,7 +595,7 @@ img {
 .floating-rabano {
     position: absolute;
     right: 20%;
-    top: 20%;
+    top: 30%;
     width: 175px;
     animation: float 2s ease-in-out infinite reverse;
 }
@@ -598,7 +603,7 @@ img {
 .floating-hat {
     position: absolute;
     right: 8%;
-    top: 30%;
+    top: 45%;
     width: 300px;
     animation: float 7s ease-in-out infinite reverse;
 }
@@ -641,6 +646,20 @@ img {
 
     100% {
         transform: translateY(0px);
+    }
+}
+
+@keyframes float-traslated {
+    0% {
+        transform: translateY(70px);
+    }
+
+    50% {
+        transform: translateY(90px);
+    }
+
+    100% {
+        transform: translateY(70px);
     }
 }
 
