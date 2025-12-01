@@ -4,102 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaming Landing Page</title>
-    <!-- Link to CSS -->
+    <title>Nintendo</title>
+
     <link rel="stylesheet" href="style.css">
 
     <!-- Google Fonts: Archivo (Black 900) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
 
     <!-- Fontshare: Satoshi (Medium 500) -->
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@500&display=swap" rel="stylesheet">
-
-    <!-- Link to JavaScript -->
-    <script src="script.js"></script>
 </head>
 
 <body>
 
     <!-- =========================================
-         NAVBAR SECTION
+         BANNER SECTION
          ========================================= -->
-    <nav class="navbar">
-        <div class="container navbar-container">
-            <div class="logo">
-                <!-- Placeholder for Nintendo-style logo -->
-                <span class="logo-text">Nintendo</span>
-            </div>
-            <span class="logo-text">Nintendo</span>
-            <div class="nav-actions">
-                <input type="text" class="input1" placeholder="Serch Games..."
-                    style="color: #B5B5B5; background-color: #6c6c6c5e; padding: 5px;">
-                <img src="images/profile.png" alt="" height="40px">
-            </div>
-        </div>
-    </nav>
-
-    <!-- =========================================
-         HERO SECTION
-         ========================================= -->
-    <header class="hero">
-        <div class="container hero-content">
-            <h1 class="hero-title">Play Beyond Limits</h1>
-            <p class="hero-subtitle">Experience the next generation of gaming with immersive worlds and endless
-                adventures.</p>
-
-            <!-- Hero Cards Container -->
-            <div class="hero-cards">
-                <!-- Card 1: Minecraft -->
-                <div class="game-card card-green">
-                    <h3>Baby Zombie</h3>
-                    <span>Minecraft Chase the Skies</span>
-                    <img src="images/minecraft.png" alt="Minecraft" class="card-image">
-                    <div class="card-info">
-
-                    </div>
-                </div>
-                <!-- Card 2: Shadow (Center/Featured) -->
-                <div class="game-card card-red featured-card">
-                    <img src="images/shadow.png" alt="Shadow the Hedgehog" class="card-image">
-                    <div class="card-info">
-                        <h3>Shadow</h3>
-                    </div>
-                </div>
-                <!-- Card 3: Kirby -->
-                <div class="game-card card-blue">
-                    <img src="images/kirby.png" alt="Kirby" class="card-image">
-                    <div class="card-info">
-                        <h3>Kirby</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <header class="banner">
+        <lottie-player id="firstLottie" src="lottie/data.json" style="width:100%; height: 100%;">
+        </lottie-player>
     </header>
 
     <!-- =========================================
          HIGHLIGHT BLOCK (Orange Section)
          ========================================= -->
-    <section class="highlight-block">
-        <div class="container highlight-container">
-            <div class="highlight-image-wrapper">
-                <img src="images/piranha-plant.png" alt="Piranha Plant" class="floating-element plant">
-                <img src="images/gamer.png" alt="Gamer Playing" class="main-highlight-img">
-                <img src="images/star.png" alt="Star" class="floating-element star">
-            </div>
-            <div class="highlight-text">
-                <h2>Discover New Ways to Play</h2>
-                <p>Immerse yourself in a world of creativity and fun. Whether you are playing solo or with friends, the
-                    adventure never ends.</p>
-                <p>Experience the freedom of play with versatile controllers and a library of games that fits every
-                    style.</p>
-            </div>
-            <div class="highlight-controllers">
-                <img src="images/joycons.png" alt="Joycons" class="joycons-img">
-            </div>
-        </div>
-    </section>
+    <header>
+        <lottie-player id="secondLottie" src="lottie/data2.json" style="width:100%; height: 100%;" loop="true">
+        </lottie-player>
+    </header>
 
     <!-- ========================================= FEATURED SECTION ========================================= -->
     <section class="featured-section">
@@ -154,22 +89,11 @@
     <!-- =========================================
          ADVENTURE SECTION (Switch Console)
          ========================================= -->
-    <section class="adventure-section">
-        <div class="container adventure-container">
-            <div class="adventure-card">
-                <div class="adventure-text">
-                    <h2>Your next adventure starts here</h2>
-                    <p>Explore new worlds and make memories that last a lifetime. The ultimate gaming experience
-                        awaits
-                        you.</p>
-                    <a href="#" class="btn btn-primary">Buy Now</a>
-                </div>
-                <div class="adventure-image">
-                    <img src="images/switch-console.png" alt="Nintendo Switch Console">
-                </div>
-            </div>
-        </div>
-    </section>
+
+    <header class="banner">
+        <lottie-player id="fourLottie" src="switch.json" style="width:100%; height: 100%;">
+        </lottie-player>
+    </header>
 
     <!-- =========================================
          TOP TRENDING SECTION
@@ -197,23 +121,10 @@
     <!-- =========================================
          NEWSLETTER SECTION
          ========================================= -->
-    <section class="newsletter-section">
-        <div class="container newsletter-container">
-            <div class="newsletter-content">
-                <div class="newsletter-visuals">
-                    <img src="images/toad-kirby.png" alt="Toad and Kirby" class="newsletter-chars">
-                </div>
-                <div class="newsletter-form-wrapper">
-                    <h2>Level Up Your Inbox</h2>
-                    <p>Get the latest news, deals, and updates delivered straight to your inbox.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your Email Address">
-                        <button type="submit" class="btn btn-primary">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+    <header>
+        <lottie-player id="thirdLottie" src="lottie/data3.json" style="width:100%; height: 100%;">
+        </lottie-player>
+    </header>
 
     <!-- =========================================
          FINAL CTA SECTION
@@ -226,7 +137,7 @@
         <div class="final-cta-text">
             <h2>Ready for your <br> next move</h2>
             <p>Join the community and start playing today.</p>
-            <a href="#" class="btn btn-primary" style="background-color: #FE5247; text-align: center;">Start Now</a>
+            <a href="#" class="btn btn-primary" style="text-align: center;">Start Now</a>
         </div>
     </section>
 
@@ -235,11 +146,17 @@
          ========================================= -->
     <footer class="footer">
         <div class="container footer-container">
-            <div class="footer-logo">Nintendo</div>
+            <div class="footer-logo">
+                <img src="images/nintendo-logo.png" alt="nintendo logo">
+            </div>
             <p>&copy; 2024 Nintendo. All rights reserved.</p>
         </div>
     </footer>
 
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@1/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@^1.5.0/dist/lottie-interactivity.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

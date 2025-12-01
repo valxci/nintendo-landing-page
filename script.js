@@ -1,22 +1,75 @@
+// ------------------------- Animación Banner 
+
+LottieInteractivity.create({
+  player: '#firstLottie',
+  mode: "scroll",
+  actions: [
+    {
+      visibility: [0, 1.0],
+      type: "seek",
+      frames: [0, 100],
+    },
+  ]
+});
+
+// --------------------- Animación Rojo
+
+LottieInteractivity.create({
+  player: '#secondLottie',
+  mode: "cursor",
+  actions: [
+    {
+      type: "hover",
+      forceFlag: false
+    }
+  ]
+});
+
+// --------------------- Animación Newsletter
+LottieInteractivity.create({
+  player: '#thirdLottie',
+  mode: "scroll",
+  actions: [
+    {
+      visibility: [0.40, 1.0],
+      type: "play"
+    }
+  ]
+});
+
+// -------------------- Animación Switch
+
+LottieInteractivity.create({
+  player: '#fourLottie',
+  mode: "scroll",
+  actions: [
+    {
+      visibility: [0, 1.0],
+      type: "seek",
+      frames: [0, 100],
+    },
+  ]
+});
+
 document.addEventListener("DOMContentLoaded", () => {
-    const items = document.querySelectorAll(".featured-item");
+  const items = document.querySelectorAll(".featured-item");
 
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
 
-            // Cuando entra a pantalla → activar animación
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-            } 
-            // Cuando sale de pantalla → quitar clase para reiniciar animación
-            else {
-                entry.target.classList.remove("visible");
-            }
+      // Cuando entra a pantalla → activar animación
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+      // Cuando sale de pantalla → quitar clase para reiniciar animación
+      else {
+        entry.target.classList.remove("visible");
+      }
 
-        });
-    }, { threshold: 0.2 });
+    });
+  }, { threshold: 0.2 });
 
-    items.forEach(item => observer.observe(item));
+  items.forEach(item => observer.observe(item));
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -53,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // ✔️ CORREGIR POSICIÓN REAL USANDO LA COMPENSACIÓN
       el.style.left = rect.left - FIX_X + "px";
-      el.style.top  = rect.top  - FIX_Y + "px";
+      el.style.top = rect.top - FIX_Y + "px";
 
       offsetX = e.clientX - rect.left;
       offsetY = e.clientY - rect.top;

@@ -63,13 +63,22 @@ img {
 
 .btn {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 8px 32px;
     border-radius: 50px;
-    font-weight: 600;
+    font-family: var(--font-text);
+    font-weight: 500;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     text-decoration: none;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #fb3041;
 }
 
 .btn-primary {
@@ -82,143 +91,15 @@ img {
     color: white;
 }
 
-
-
-.btn:hover {
-    background-color: #fb3041;
-}
-
 .section-title {
     font-size: 2rem;
     margin-bottom: 40px;
     font-weight: 800;
 }
 
-/* =========================================
-   NAVBAR
-   ========================================= */
-.navbar {
-    padding: 20px 0;
-    position: absolute;
-    width: 100%;
-    top: 0;
-    z-index: 100;
-}
-
-.navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo-text {
-    font-weight: 800;
-    font-size: 1.2rem;
-    border: 2px solid white;
-    padding: 5px 15px;
-    border-radius: 20px;
-}
-
-.nav-links {
-    display: flex;
-    gap: 30px;
-}
-
-.nav-links a {
-    font-weight: 600;
-    font-size: 0.9rem;
-    opacity: 0.8;
-    transition: opacity 0.3s;
-}
-
-.nav-links a:hover {
-    opacity: 1;
-}
-
-.nav-actions {
-    display: flex;
-    gap: 20px;
-}
-
-/* =========================================
-   HERO SECTION
-   ========================================= */
-.hero {
-    padding-top: 120px;
-    padding-bottom: 80px;
-    background: radial-gradient(circle at top center, #1a2a4a 0%, #050810 70%);
-    text-align: center;
+.banner {
     position: relative;
-}
-
-.hero-title {
-    font-size: 3.5rem;
-    font-weight: 800;
-    margin-bottom: 10px;
-}
-
-.hero-subtitle {
-    font-size: 1rem;
-    color: #a0a0a0;
-    max-width: 600px;
-    margin: 0 auto 60px;
-}
-
-.hero-cards {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    perspective: 1000px;
-}
-
-.game-card {
-    width: 280px;
-    height: 400px;
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
-    transition: transform 0.4s ease;
-    cursor: pointer;
-}
-
-.game-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    z-index: 10;
-}
-
-.card-green {
-    background: linear-gradient(180deg, #a8e063, #56ab2f);
-}
-
-.card-red {
-    background: linear-gradient(180deg, #ff512f, #dd2476);
-}
-
-.card-blue {
-    background: linear-gradient(180deg, #4facfe, #00f2fe);
-}
-
-.featured-card {
-    transform: scale(1.1);
-    z-index: 5;
-}
-
-.featured-card:hover {
-    transform: scale(1.15);
-}
-
-.card-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    padding: 20px;
-}
-
-.card-info {
-    padding: 15px;
-    text-align: center;
-    color: white;
+    z-index: 1;
 }
 
 /* =========================================
@@ -342,6 +223,11 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .featured-card-bg:hover {
@@ -364,15 +250,19 @@ img {
     background: #FE5247;
     /* Color rojo como los demás botones */
     color: white;
-    padding: 8px 10px;
+    padding: 6px 18px;
     border-radius: 50px;
     text-decoration: none;
-    font-size: 0.6rem;
-    transition: background 0.3s;
+    font-size: 0.7rem;
     border: none;
-    font-family: var(--font-title);
-    font-weight: 600;
+    font-family: var(--font-text);
+    font-weight: 500;
     display: inline-block;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .view-more-btn:hover {
@@ -383,7 +273,6 @@ img {
 
 .featured-img {
     height: 140px;
-
     transition: transform 0.3s;
     left: 100px;
     align-self: center;
@@ -569,7 +458,6 @@ img {
     mask-image: linear-gradient(to top, black 90%, transparent 100%);
 
     position: relative;
-    /* 💥 REGLA MÁS IMPORTANTE */
     overflow: visible;
 }
 
@@ -629,25 +517,30 @@ img {
    FOOTER
    ========================================= */
 .footer {
-    padding: 40px 0;
+    padding: 20px 0;
     border-top: 1px solid #1a253a;
     text-align: center;
+    background-color: #0C0F1E;
 }
 
 .footer-logo {
-    font-weight: 800;
-    font-size: 1.2rem;
-    border: 2px solid white;
-    padding: 5px 15px;
-    border-radius: 20px;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 20px;
+}
+
+.footer-logo img {
+    padding-top: 10px;
+    height: 45px; 
+    width: auto;    
 }
 
 .footer p {
     color: #666;
     font-size: 0.8rem;
 }
+
 
 /* =========================================
    ANIMATIONS
