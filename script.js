@@ -26,16 +26,13 @@ LottieInteractivity.create({
 });
 
 // --------------------- Animación Newsletter
-LottieInteractivity.create({
-  player: '#thirdLottie',
-  mode: "scroll",
-  actions: [
-    {
-      visibility: [0.40, 1.0],
-      type: "play"
-    }
-  ]
-});
+const p = document.querySelector('#thirdLottie'), c = p.closest('header'); let done=false;
+function check(){ if(done) return;
+  const r = c.getBoundingClientRect();
+  const vh = window.innerHeight; const visible = Math.max(0, Math.min(r.bottom, vh) - Math.max(r.top,0))/r.height;
+  if(visible>=0.4){ p.play(); done=true; window.removeEventListener('scroll',check); window.removeEventListener('resize',check); }
+}
+window.addEventListener('scroll', check); window.addEventListener('resize', check); check();
 
 // -------------------- Animación Switch
 
