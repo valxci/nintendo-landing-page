@@ -12,6 +12,9 @@ LottieInteractivity.create({
   ]
 });
 
+
+
+
 // --------------------- Animación Rojo
 
 LottieInteractivity.create({
@@ -26,11 +29,12 @@ LottieInteractivity.create({
 });
 
 // --------------------- Animación Newsletter
-const p = document.querySelector('#thirdLottie'), c = p.closest('header'); let done=false;
-function check(){ if(done) return;
+const p = document.querySelector('#thirdLottie'), c = p.closest('header'); let done = false;
+function check() {
+  if (done) return;
   const r = c.getBoundingClientRect();
-  const vh = window.innerHeight; const visible = Math.max(0, Math.min(r.bottom, vh) - Math.max(r.top,0))/r.height;
-  if(visible>=0.4){ p.play(); done=true; window.removeEventListener('scroll',check); window.removeEventListener('resize',check); }
+  const vh = window.innerHeight; const visible = Math.max(0, Math.min(r.bottom, vh) - Math.max(r.top, 0)) / r.height;
+  if (visible >= 0.4) { p.play(); done = true; window.removeEventListener('scroll', check); window.removeEventListener('resize', check); }
 }
 window.addEventListener('scroll', check); window.addEventListener('resize', check); check();
 
@@ -49,7 +53,7 @@ LottieInteractivity.create({
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const items = document.querySelectorAll(".featured-item");
+  const items = document.querySelectorAll(".featured-item, .trending-item");
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
